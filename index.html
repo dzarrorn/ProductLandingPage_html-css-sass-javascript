@@ -9,9 +9,54 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <title>Adidas</title>
   </head>
   <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <header>
+      <a href="#" class="logo">adidas</a>
+      <nav class="navbar">
+        <a href="#">home</a>
+        <a href="#">about</a>
+        <a href="#">category</a>
+        <a href="#">product</a>
+        <a href="#">blogs</a>
+      </nav>
+    </header>
+    <section class="container">
+      <div class="content">
+        <h3>new adidas shoes</h3>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate
+          perferendis rerum aliquid quas id eveniet laudantium officia error!
+          Sed, nesciunt?
+        </p>
+        <a href="#" class="btn">add to chart</a>
+      </div>
+      <div class="image">
+        <img src="images/image1.png" class="shoe active" alt="" />
+        <img src="images/image2.png" class="shoe" alt="" />
+        <img src="images/image7.png" class="shoe" alt="" />
+        <img src="images/image8.png" class="shoe" alt="" />
+        <img src="images/image11.png" class="shoe" alt="" />
+        <img src="images/image12.png" class="shoe" alt="" />
+      </div>
+      <div class="left" onclick="prev()"><</div>
+      <div class="right" onclick="next()">></div>
+    </section>
+    <script>
+      let shoe = document.querySelectorAll(".shoe");
+      let index = 0;
+
+      function next() {
+        shoe[index].classList.remove("active");
+        index = (index + 1) % shoe.length;
+        shoe[index].classList.add("active");
+      }
+      function prev() {
+        shoe[index].classList.remove("active");
+        index = (index - 1 + shoe.length) % shoe.length;
+        shoe[index].classList.add("active");
+      }
+    </script>
   </body>
 </html>
